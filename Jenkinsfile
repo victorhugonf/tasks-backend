@@ -24,7 +24,7 @@ pipeline {
         stage ('Quality Gate') {
             steps {
                 timeout(time: 1, unit: 'MINUTES') {
-                    bat 'passei aqui'
+                    bat 'echo passei aqui'
                     waitForQualityGate abortPipeline: true
                 }
             }
