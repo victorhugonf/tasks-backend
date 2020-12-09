@@ -25,7 +25,7 @@ pipeline {
             steps {
                 timeout(time: 1, unit: 'MINUTES') {
                     bat 'echo passei aqui'
-                    waitForQualityGate abortPipeline: true
+
                 }
             }
         }
