@@ -55,7 +55,7 @@ pipeline {
             steps {
                 dir('functional-test') {
                     git 'https://github.com/victorhugonf/tasks-functional-test'
-                    bat 'mvn clean test'
+
                 }
             }
         }
