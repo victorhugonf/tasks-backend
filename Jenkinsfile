@@ -55,8 +55,8 @@ pipeline {
             steps {
                 dir('functional-test') {
                     git 'https://github.com/victorhugonf/tasks-functional-test'
-                    //bat 'mvn clean test'
-                    bat 'echo de vez em quando dá erro, então finge que funcionou'
+                    bat 'mvn clean test'
+                    //bat 'echo de vez em quando da erro, entao finge que funcionou'
                 }
             }
         }
@@ -64,6 +64,14 @@ pipeline {
             steps {
                 bat 'docker-compose build'
                 bat 'docker-compose up -d'
+            }
+        }
+        stage ('Health Check') {
+            steps {
+                sleep(30)
+                dir('functional-test') {
+                    bat 'mvn clean verify -Dskip.surefire.tests'
+                }
             }
         }
     }
