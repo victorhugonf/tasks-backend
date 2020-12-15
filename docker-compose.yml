@@ -9,8 +9,10 @@ services:
       - POSTGRES_PASSWORD=passwd
       - POSTGRES_DB=tasks
     volumes:
-      - prod_postgresql:/var/lib/postgresql
-      - prod_postgresql_data:/var/lib/postgresql/data
+      - D:/UDEMY/Devops-CI-CD-Jenkins/postgresql:/var/lib/postgresql
+	  - D:/UDEMY/Devops-CI-CD-Jenkins/postgresql/data:/var/lib/postgresql/data
+ #     - prod_postgresql:/var/lib/postgresql
+ #     - prod_postgresql_data:/var/lib/postgresql/data
 
   backend:
     container_name: backend-prod
@@ -57,6 +59,6 @@ networks:
   prod_net_front:
   prod_net_back:
 
-volumes:
-  prod_postgresql:
-  prod_postgresql_data:
+#volumes:
+#  prod_postgresql:
+#  prod_postgresql_data:
