@@ -32,7 +32,7 @@ services:
       - DATABASE_PORT=5432
       - DATABASE_USER=postgres
       - DATABASE_PASSWD=passwd
-      #- DATABASE_UPDATE=none
+      - DATABASE_UPDATE=none
     depends_on:
       - db
 
@@ -59,6 +59,3 @@ networks:
   prod_net_front:
   prod_net_back:
 
-#volumes:
-#  prod_postgresql:
-#  prod_postgresql_data:
